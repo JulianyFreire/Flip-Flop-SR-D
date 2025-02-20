@@ -8,56 +8,130 @@
 </head>
 <body>
     <div class="container">
-        <h1>Simulação de Flip-Flops</h1>
-
+        <h1>Simulação Visual de Flip-Flops</h1>
+        
         <!-- Flip-Flop SR -->
-        <div id="sr-flipflop">
-            <h2>Flip-Flop SR</h2>
-            <div class="inputs">
-                <label for="s">S (Set): </label>
-                <input type="checkbox" id="s">
-                <label for="r">R (Reset): </label>
-                <input type="checkbox" id="r">
-            </div>
-            <div class="output">
-                <p>Q: <span id="q-sr">0</span></p>
-                <p>Q': <span id="q-not-sr">1</span></p>
-            </div>
+        <div class="flipflop" id="sr-flipflop">
+          <h2>Flip-Flop SR</h2>
+          <svg width="350" height="180">
+            <defs>
+              <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+              </marker>
+            </defs>
+            <!-- Corpo do Flip-Flop -->
+            <rect x="120" y="50" width="110" height="80" fill="#ddd" stroke="#333" stroke-width="2" />
+            <text x="175" y="100" font-size="20" text-anchor="middle" fill="#333">SR</text>
+            
+            <!-- Entrada S -->
+            <line x1="20" y1="70" x2="120" y2="70" stroke="#4CAF50" stroke-width="2" marker-end="url(#arrow)" />
+            <text x="0" y="70" font-size="14" fill="#4CAF50">S</text>
+            
+            <!-- Entrada R -->
+            <line x1="20" y1="110" x2="120" y2="110" stroke="#F44336" stroke-width="2" marker-end="url(#arrow)" />
+            <text x="0" y="115" font-size="14" fill="#F44336">R</text>
+            
+            <!-- Saída Q -->
+            <line x1="230" y1="70" x2="330" y2="70" stroke="#4CAF50" stroke-width="2" marker-end="url(#arrow)" />
+            <text x="335" y="70" font-size="14" fill="#4CAF50">Q</text>
+            
+            <!-- Saída Q' -->
+            <line x1="230" y1="110" x2="330" y2="110" stroke="#F44336" stroke-width="2" marker-end="url(#arrow)" />
+            <text x="335" y="110" font-size="14" fill="#F44336">Q'</text>
+          </svg>
+          <div class="inputs">
+            <label for="s">S (Set): </label>
+            <input type="checkbox" id="s" />
+            <label for="r">R (Reset): </label>
+            <input type="checkbox" id="r" />
+          </div>
+          <div class="output">
+            <p>Q: <span id="q-sr">0</span></p>
+            <p>Q': <span id="q-not-sr">1</span></p>
+          </div>
         </div>
-
+        
         <!-- Flip-Flop D Síncrono -->
-        <div id="d-flipflop-sinc">
-            <h2>Flip-Flop D (Síncrono)</h2>
-            <div class="inputs">
-                <label for="d-sinc">D (Data): </label>
-                <input type="checkbox" id="d-sinc">
-                <button id="clk-btn">Clock ↑</button>
-            </div>
-            <div class="output">
-                <p>Q: <span id="q-d-sinc">0</span></p>
-                <p>Q': <span id="q-not-d-sinc">1</span></p>
-            </div>
+        <div class="flipflop" id="d-flipflop-sinc">
+          <h2>Flip-Flop D (Síncrono)</h2>
+          <svg width="350" height="200">
+            <defs>
+              <marker id="arrow2" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+              </marker>
+            </defs>
+            <!-- Corpo do Flip-Flop -->
+            <rect x="120" y="60" width="110" height="80" fill="#ddd" stroke="#333" stroke-width="2" />
+            <text x="175" y="110" font-size="20" text-anchor="middle" fill="#333">D</text>
+            
+            <!-- Entrada D -->
+            <line x1="20" y1="80" x2="120" y2="80" stroke="#4CAF50" stroke-width="2" marker-end="url(#arrow2)" />
+            <text x="0" y="80" font-size="14" fill="#4CAF50">D</text>
+            
+            <!-- Entrada de Clock (seta vertical) -->
+            <line x1="175" y1="0" x2="175" y2="60" stroke="#000" stroke-width="2" marker-end="url(#arrow2)" />
+            <text x="180" y="30" font-size="14" fill="#000">CLK</text>
+            
+            <!-- Saída Q -->
+            <line x1="230" y1="80" x2="330" y2="80" stroke="#4CAF50" stroke-width="2" marker-end="url(#arrow2)" />
+            <text x="335" y="80" font-size="14" fill="#4CAF50">Q</text>
+            
+            <!-- Saída Q' -->
+            <line x1="230" y1="120" x2="330" y2="120" stroke="#F44336" stroke-width="2" marker-end="url(#arrow2)" />
+            <text x="335" y="120" font-size="14" fill="#F44336">Q'</text>
+          </svg>
+          <div class="inputs">
+            <label for="d-sinc">D (Data): </label>
+            <input type="checkbox" id="d-sinc" />
+            <button id="clk-btn">Clock ↑</button>
+          </div>
+          <div class="output">
+            <p>Q: <span id="q-d-sinc">0</span></p>
+            <p>Q': <span id="q-not-d-sinc">1</span></p>
+          </div>
         </div>
-
+        
         <!-- Flip-Flop D Assíncrono -->
-        <div id="d-flipflop-async">
-            <h2>Flip-Flop D (Assíncrono)</h2>
-            <div class="inputs">
-                <label for="d-async">D (Data): </label>
-                <input type="checkbox" id="d-async">
-            </div>
-            <div class="output">
-                <p>Q: <span id="q-d-async">0</span></p>
-                <p>Q': <span id="q-not-d-async">1</span></p>
-            </div>
+        <div class="flipflop" id="d-flipflop-async">
+          <h2>Flip-Flop D (Assíncrono)</h2>
+          <svg width="350" height="180">
+            <defs>
+              <marker id="arrow3" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+              </marker>
+            </defs>
+            <!-- Corpo do Flip-Flop -->
+            <rect x="120" y="50" width="110" height="80" fill="#ddd" stroke="#333" stroke-width="2" />
+            <text x="175" y="100" font-size="20" text-anchor="middle" fill="#333">D</text>
+            
+            <!-- Entrada D -->
+            <line x1="20" y1="90" x2="120" y2="90" stroke="#4CAF50" stroke-width="2" marker-end="url(#arrow3)" />
+            <text x="0" y="90" font-size="14" fill="#4CAF50">D</text>
+            
+            <!-- Saída Q -->
+            <line x1="230" y1="70" x2="330" y2="70" stroke="#4CAF50" stroke-width="2" marker-end="url(#arrow3)" />
+            <text x="335" y="70" font-size="14" fill="#4CAF50">Q</text>
+            
+            <!-- Saída Q' -->
+            <line x1="230" y1="110" x2="330" y2="110" stroke="#F44336" stroke-width="2" marker-end="url(#arrow3)" />
+            <text x="335" y="110" font-size="14" fill="#F44336">Q'</text>
+          </svg>
+          <div class="inputs">
+            <label for="d-async">D (Data): </label>
+            <input type="checkbox" id="d-async" />
+          </div>
+          <div class="output">
+            <p>Q: <span id="q-d-async">0</span></p>
+            <p>Q': <span id="q-not-d-async">1</span></p>
+          </div>
         </div>
-
+        
         <div>
-            <h3>Observações:</h3>
-            <p>Flip-Flop SR assíncrono, Flip-Flop D síncrono e Flip-Flop D assíncrono.</p>
+          <h3>Observações:</h3>
+          <p>Os flip-flops SR e D assíncronos atualizam seu estado automaticamente conforme as entradas mudam, enquanto o flip-flop D síncrono é atualizado somente ao acionar o clock.</p>
         </div>
-    </div>
-
+      </div>
+      
     <script src="script.js"></script>
 </body>
 </html>
