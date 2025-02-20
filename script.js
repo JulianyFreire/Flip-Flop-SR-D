@@ -1,7 +1,7 @@
 // Estado inicial do Flip-Flop SR
 let qSR = 0;
 
-// Função para atualizar o Flip-Flop SR automaticamente ao marcar/desmarcar S ou R
+// Atualiza automaticamente o Flip-Flop SR ao marcar/desmarcar S ou R
 function updateSR() {
     let s = document.getElementById('s').checked;
     let r = document.getElementById('r').checked;
@@ -27,14 +27,26 @@ function updateSR() {
 document.getElementById('s').addEventListener('change', updateSR);
 document.getElementById('r').addEventListener('change', updateSR);
 
-// Função para simular a borda de subida do Clock no Flip-Flop D
-// Em um circuito digital real, o Flip-Flop D transfere o valor de D para Q somente quando o clock sobe (transição de 0 para 1).
-function updateD() {
-    let d = document.getElementById('d').checked;
-    
-    document.getElementById('q-d').textContent = d ? '1' : '0';
-    document.getElementById('q-not-d').textContent = d ? '0' : '1';
+// ========================== FLIP-FLOP D SÍNCRONO ==========================
+
+// Atualiza o Flip-Flop D somente quando o botão Clock é pressionado
+function updateDSync() {
+    let d = document.getElementById('d-sinc').checked;
+    document.getElementById('q-d-sinc').textContent = d ? '1' : '0';
+    document.getElementById('q-not-d-sinc').textContent = d ? '0' : '1';
 }
 
-// Simula o clock na borda de subida ao clicar no botão
-document.getElementById('clk-btn').addEventListener('click', updateD);
+// Evento de clique no botão de clock para Flip-Flop D Síncrono
+document.getElementById('clk-btn').addEventListener('click', updateDSync);
+
+// ========================== FLIP-FLOP D ASSÍNCRONO ==========================
+
+// Atualiza o Flip-Flop D Assíncrono sempre que D mudar
+function updateDAsync() {
+    let d = document.getElementById('d-async').checked;
+    document.getElementById('q-d-async').textContent = d ? '1' : '0';
+    document.getElementById('q-not-d-async').textContent = d ? '0' : '1';
+}
+
+// Evento de mudança no D para Flip-Flop D Assíncrono
+document.getElementById('d-async').addEventListener('change', updateDAsync);

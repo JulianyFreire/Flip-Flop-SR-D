@@ -21,27 +21,40 @@
             </div>
             <div class="output">
                 <p>Q: <span id="q-sr">0</span></p>
-                <p>Q' : <span id="q-not-sr">1</span></p>
+                <p>Q': <span id="q-not-sr">1</span></p>
             </div>
         </div>
 
-        <!-- Flip-Flop D -->
-        <div id="d-flipflop">
-            <h2>Flip-Flop D</h2>
+        <!-- Flip-Flop D Síncrono -->
+        <div id="d-flipflop-sinc">
+            <h2>Flip-Flop D (Síncrono)</h2>
             <div class="inputs">
-                <label for="d">D (Data): </label>
-                <input type="checkbox" id="d">
+                <label for="d-sinc">D (Data): </label>
+                <input type="checkbox" id="d-sinc">
                 <button id="clk-btn">Clock ↑</button>
             </div>
             <div class="output">
-                <p>Q: <span id="q-d">0</span></p>
-                <p>Q': <span id="q-not-d">1</span></p>
+                <p>Q: <span id="q-d-sinc">0</span></p>
+                <p>Q': <span id="q-not-d-sinc">1</span></p>
+            </div>
+        </div>
+
+        <!-- Flip-Flop D Assíncrono -->
+        <div id="d-flipflop-async">
+            <h2>Flip-Flop D (Assíncrono)</h2>
+            <div class="inputs">
+                <label for="d-async">D (Data): </label>
+                <input type="checkbox" id="d-async">
+            </div>
+            <div class="output">
+                <p>Q: <span id="q-d-async">0</span></p>
+                <p>Q': <span id="q-not-d-async">1</span></p>
             </div>
         </div>
 
         <div>
             <h3>Observações:</h3>
-            <p>Flip-Flop SR assíncrono e Flip-Flop D síncrono.</p>
+            <p>Flip-Flop SR assíncrono, Flip-Flop D síncrono e Flip-Flop D assíncrono.</p>
         </div>
     </div>
 
