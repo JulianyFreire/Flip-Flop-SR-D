@@ -1,56 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Simulação de Flip-Flops</title>
-   <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação de Flip-Flops</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-   <div class="container">
-       <h1>Simulação de Flip-Flops</h1>
-      
-       <!-- Flip-Flop SR -->
-       <div id="sr-flipflop">
-           <h2>Flip-Flop SR</h2>
-           <div class="inputs">
-               <label for="s">S (Set): </label>
-               <input type="checkbox" id="s">
-               <label for="r">R (Reset): </label>
-               <input type="checkbox" id="r">
-           </div>
-           <button onclick="updateSR()">Atualizar SR</button>
-           <div class="output">
-               <p>Q: <span id="q-sr">0</span></p>
-               <p>Q' (Q complement): <span id="q-not-sr">1</span></p>
-           </div>
-       </div>
+    <div class="container">
+        <h1>Simulação de Flip-Flops</h1>
 
+        <!-- Flip-Flop SR -->
+        <div id="sr-flipflop">
+            <h2>Flip-Flop SR</h2>
+            <div class="inputs">
+                <label for="s">S (Set): </label>
+                <input type="checkbox" id="s">
+                <label for="r">R (Reset): </label>
+                <input type="checkbox" id="r">
+            </div>
+            <div class="output">
+                <p>Q: <span id="q-sr">0</span></p>
+                <p>Q' (Q complement): <span id="q-not-sr">1</span></p>
+            </div>
+        </div>
 
-       <!-- Flip-Flop D -->
-       <div id="d-flipflop">
-           <h2>Flip-Flop D</h2>
-           <div class="inputs">
-               <label for="d">D (Data): </label>
-               <input type="checkbox" id="d">
-               <label for="clk">Clock: </label>
-               <input type="checkbox" id="clk">
-           </div>
-           <button onclick="updateD()">Atualizar D</button>
-           <div class="output">
-               <p>Q: <span id="q-d">0</span></p>
-               <p>Q' (Q complement): <span id="q-not-d">1</span></p>
-           </div>
-       </div>
+        <!-- Flip-Flop D -->
+        <div id="d-flipflop">
+            <h2>Flip-Flop D</h2>
+            <div class="inputs">
+                <label for="d">D (Data): </label>
+                <input type="checkbox" id="d">
+                <button id="clk-btn">Clock ↑</button>
+            </div>
+            <div class="output">
+                <p>Q: <span id="q-d">0</span></p>
+                <p>Q': <span id="q-not-d">1</span></p>
+            </div>
+        </div>
 
+        <div>
+            <h3>Observações:</h3>
+            <p>Flip-Flop SR assíncrono e Flip-Flop D síncrono.</p>
+        </div>
+    </div>
 
-       <div>
-           <h3>Observações:</h3>
-           <p>Flip-Flop SR assíncrono e Flip-Flop D síncrono.</p>
-       </div>
-   </div>
-
-
-   <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
