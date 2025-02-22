@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.flipflop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    padding: 20px;
+    background: lightgray;
+    position: relative;
+}
+.input-group, .output-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+input {
+    width: 40px;
+    text-align: center;
+}
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background: gray;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
