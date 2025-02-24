@@ -3,152 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulação de Flip-Flops</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Menu</title>
 </head>
 <body>
-  
-  <div class="container">
-    <h1>Simulação Visual de Flip-Flops com Imagens e Animações</h1>
-    
-    <!-- Flip-Flop SR -->
-    <div class="flipflop" id="sr-flipflop">
-      <h2>Flip-Flop SR</h2>
-      <!-- Imagem do diagrama (coloque a imagem adequada na pasta "images") -->
-      <svg width="400" height="250" xmlns="http://www.w3.org/2000/svg">
-        <!-- Definição do marcador de seta -->
-        <defs>
-          <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
-            <path d="M0,0 L0,6 L9,3 z" fill="#333" />
-          </marker>
-        </defs>
-        
-        <!-- Corpo do Flip-Flop SR -->
-        <rect x="140" y="60" width="120" height="120" fill="#ddd" stroke="#333" stroke-width="2" />
-        <text x="200" y="130" font-size="24" text-anchor="middle" fill="#333">SR</text>
-        
-        <!-- Entrada S -->
-        <line x1="40" y1="90" x2="140" y2="90" stroke="#4CAF50" stroke-width="2" marker-end="url(#arrow)" />
-        <text x="20" y="95" font-size="16" fill="#4CAF50">S</text>
-        
-        <!-- Entrada R -->
-        <line x1="40" y1="150" x2="140" y2="150" stroke="#F44336" stroke-width="2" marker-end="url(#arrow)" />
-        <text x="20" y="155" font-size="16" fill="#F44336">R</text>
-        
-        <!-- Saída Q -->
-        <line x1="260" y1="90" x2="360" y2="90" stroke="#4CAF50" stroke-width="2" marker-end="url(#arrow)" />
-        <text x="370" y="90" font-size="16" fill="#4CAF50">Q</text>
-        
-        <!-- Saída Q' -->
-        <line x1="260" y1="150" x2="360" y2="150" stroke="#F44336" stroke-width="2" marker-end="url(#arrow)" />
-        <text x="370" y="150" font-size="16" fill="#F44336">Q′</text>
-      </svg>
-      
-      <div class="inputs">
-        <label for="s">S (Set): </label>
-        <input type="checkbox" id="s" />
-        <label for="r">R (Reset): </label>
-        <input type="checkbox" id="r" />
-      </div>
-      <div class="output">
-        <p>Q: <span id="q-sr">0</span></p>
-        <p>Q': <span id="q-not-sr">1</span></p>
-      </div>
-    </div>
-    
-    <!-- Flip-Flop D Síncrono -->
-    <div class="flipflop" id="d-flipflop-sinc">
-      <h2>Flip-Flop D (Síncrono)</h2>
-      <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-        <!-- Definição do marcador de seta -->
-        <defs>
-          <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
-            <path d="M0,0 L0,6 L9,3 z" fill="#000" />
-          </marker>
-        </defs>
-        
-        <!-- Corpo do flip-flop D -->
-        <rect x="100" y="50" width="100" height="100" fill="#ddd" stroke="#000" stroke-width="2" />
-        <text x="150" y="110" font-size="20" text-anchor="middle" fill="#000">D</text>
-        
-        <!-- Entrada D -->
-        <line x1="50" y1="90" x2="100" y2="90" stroke="#000" stroke-width="2" marker-end="url(#arrow)" />
-        <text x="30" y="95" font-size="14" fill="#000">D</text>
-        
-        <!-- Entrada Clock -->
-        <line x1="150" y1="20" x2="150" y2="50" stroke="#000" stroke-width="2" marker-end="url(#arrow)" />
-        <text x="155" y="35" font-size="14" fill="#000">CLK</text>
-        
-        <!-- Saída Q -->
-        <line x1="200" y1="75" x2="250" y2="75" stroke="#000" stroke-width="2" marker-end="url(#arrow)" />
-        <text x="255" y="80" font-size="14" fill="#000">Q</text>
-        
-        <!-- Saída Q' -->
-        <line x1="200" y1="125" x2="250" y2="125" stroke="#000" stroke-width="2" marker-end="url(#arrow)" />
-        <text x="255" y="130" font-size="14" fill="#000">Q'</text>
-      </svg>
-      <div class="inputs">
-        <label for="d-sinc">D (Data): </label>
-        <input type="checkbox" id="d-sinc" />
-        <button id="clk-btn">Clock ↑</button>
-      </div>
-      <div class="output">
-        <p>Q: <span id="q-d-sinc">0</span></p>
-        <p>Q': <span id="q-not-d-sinc">1</span></p>
-      </div>
-    </div>
-    
-    <!-- Flip-Flop D Assíncrono -->
-    <div class="flipflop" id="d-flipflop-async">
-      <h2>Flip-Flop D (Assíncrono)</h2>
-
-      <svg width="400" height="250" xmlns="http://www.w3.org/2000/svg">
-        <!-- Definição do marcador de seta -->
-        <defs>
-          <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
-            <path d="M0,0 L0,6 L9,3 z" fill="#333" />
-          </marker>
-        </defs>
-        
-        <!-- Corpo do D Latch -->
-        <rect x="120" y="70" width="160" height="100" fill="#ddd" stroke="#333" stroke-width="2" />
-        <text x="200" y="130" font-size="20" text-anchor="middle" fill="#333">D Latch</text>
-        
-        <!-- Entrada D -->
-        <line x1="20" y1="120" x2="120" y2="120" stroke="#4CAF50" stroke-width="2" marker-end="url(#arrow)" />
-        <text x="10" y="120" font-size="14" fill="#4CAF50">D</text>
-        
-        <!-- Entrada Enable (Habilitação) -->
-        <line x1="200" y1="180" x2="200" y2="220" stroke="#000" stroke-width="2" marker-end="url(#arrow)" />
-        <text x="210" y="210" font-size="14" fill="#000">Enable</text>
-        
-        <!-- Saída Q -->
-        <line x1="280" y1="100" x2="380" y2="100" stroke="#4CAF50" stroke-width="2" marker-end="url(#arrow)" />
-        <text x="390" y="100" font-size="14" fill="#4CAF50">Q</text>
-        
-        <!-- Saída Q' -->
-        <line x1="280" y1="150" x2="380" y2="150" stroke="#F44336" stroke-width="2" marker-end="url(#arrow)" />
-        <text x="390" y="150" font-size="14" fill="#F44336">Q′</text>
-      </svg>
-      <div class="inputs">
-        <label for="d-async">D (Data): </label>
-        <input type="checkbox" id="d-async" />
-      </div>
-      <div class="output">
-        <p>Q: <span id="q-d-async">0</span></p>
-        <p>Q': <span id="q-not-d-async">1</span></p>
-      </div>
-    </div>
-    
-    <div>
-      <h3>Observações:</h3>
-      <p>
-        Os flip-flops SR e D assíncronos atualizam seu estado automaticamente conforme as entradas mudam,
-        enquanto o flip-flop D síncrono é atualizado somente ao acionar o clock.
-      </p>
-    </div>
-  </div>
-      
-    <script src="script.js"></script>
+  <nav class="menu">
+    <h1>MENU</h1>
+    <ul>
+        <li><a href="Flip-Flop-SR/flipflop_sr.html">Flip Flop S-R</a></li>
+        <li><a href="Flip-Flop-D/flipflop_d.html">Flip Flop D</a></li>
+        <li><a href="Registrador/registrador_4bits.html">Registrador de 4-bits</a></li>
+    </ul>
+</nav>
+<script src="script.js"></script>
 </body>
 </html>
