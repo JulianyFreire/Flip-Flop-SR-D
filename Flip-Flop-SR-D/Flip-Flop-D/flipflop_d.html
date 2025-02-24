@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Flop D</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styleTable.css">
+    <link rel="stylesheet" href="stylePortas.css">
+</head>
+<body>
+  <div class="main-container">
+    <a href="../index.html" class="btn-voltar">Voltar ao Menu</a>
+    <h1>Simulação Visual Flip-Flop D</h1>
+    <h2>Flip-Flop D Síncrono</h2>
+    
+    <div class="columns-container">
+        <div class="input-column">
+            <div class="input-group">
+                <label>D</label>
+                <input type="number" id="inputD" min="0" max="1" value="0">
+                <div class="exemplo">Ex: 0 ou 1</div>
+            </div>
+
+            <div class="input-group">
+                <label>CLK</label>
+                <input type="number" id="clk" min="0" max="1" value="0">
+                <div class="exemplo">Ex: 0 ou 1</div>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="Assets/img.png" alt="Diagrama do Flip-Flop D">
+        </div>
+
+        <div class="output-column">
+            <div class="output-container">
+                <div id="resQ">Res: 0</div>
+                <div id="resQn">Res: 1</div>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="processar()">PROCESSAR</button>
+
+    <div class="tabela_verdade">
+        <h4>TABELA VERDADE</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>CLK</th>
+                    <th>D</th>
+                    <th>Q</th>
+                    <th>*Q</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>Q</td>
+                    <td>*Q</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>Q</td>
+                    <td>*Q</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="portas">
+        <h4>PORTAS LÓGICAS</h4>
+        <img src="Assets/porta logica D nand sincrono.png" alt="nand">
+    </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
