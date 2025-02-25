@@ -1,130 +1,112 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
-}
-
-.container {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f4f4f4;
+  }
+  .container {
     max-width: 800px;
-    width: 100%;
-}
-
-.inner_container {
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .diagram-container {
+    position: relative;
+    margin: 50px auto;
+    width: 300px;
+    height: 250px;
+    border: 1px solid #ccc;
+    background: #fff;
+  }
+  .inner_container {
     display: flex;
-}
-
-h1 {
-    color: #2c3e50;
-    text-align: center;
+  }
+  .flipflop {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    width: 120px;
+    height: 120px;
+    border: 3px solid #000;
+    background: #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  /* Entrada D (lado esquerdo) */
+  .input-d {
+    position: absolute;
+    top: 110px;
+    left: 20px;
+    font-size: 14px;
+  }
+  .input-d::after {
+    content: " →";
+    margin-left: 5px;
+  }
+  /* Entrada Clock (topo) */
+  .input-clk {
+    position: absolute;
+    top: 0px;
+    left: 150px;
+    font-size: 14px;
+  }
+  .input-clk::after {
+    content: " ↓";
+    display: block;
+    margin-top: 5px;
+  }
+  /* Entrada Reset (CLR - parte inferior) */
+  .input-reset {
+    position: absolute;
+    bottom: 0px;
+    left: 150px;
+    font-size: 14px;
+  }
+  .input-reset::after {
+    content: " ↑";
+    display: block;
+    margin-top: 5px;
+  }
+  /* Saídas (lado direito) */
+  .output {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    font-size: 14px;
+  }
+  .output::after {
+    content: " ←";
+    margin-left: 5px;
+  }
+  .controls {
     margin-top: 20px;
-    font-size: 1.8em;
-}
-
-.inputs {
-    background-color: #f8f9fa;
-    border-radius: 8px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .input_dados{
+    display: flex;
+    justify-items: auto;
+  }
+  .controls input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    font-size: 16px;
     text-align: center;
-}
-
-.text_input {
-    font-weight: 600;
-    color: #34495e;
-    margin: 0 0 15px 0;
-}
-
-label {
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-input[type="number"] {
+  }
+  .box_btn {
+    display: flex;
+    flex-direction: column;
+  }
+  .controls button {
     padding: 8px 12px;
-    border-radius: 6px;
-    width: 60px;
-    text-align: center;
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    transition: border-color 0.3s ease;
-}
-
-input[type="number"]:focus {
-    outline: none;
-}
-
-.diagram-container {
-    background-color: #f8f9fa;
-    border-radius: 8px;
-}
-
-.output {
-    border-radius: 8px;
-    text-align: center;
-}
-
-.output p {
-    font-size: 1.2em;
-    margin: 10px 0;
-}
-
-#q-value, #qnot-value {
-    font-weight: bold;
-    font-size: 1.3em;
-}
-
-/* Estilização das conexões no SVG */
-#line-d {
-    stroke: #4CAF50;
-    stroke-width: 3;
-}
-
-#line-q {
-    stroke: #4CAF50;
-    stroke-width: 3;
-}
-
-#line-qnot {
-    stroke: #F44336;
-    stroke-width: 3;
-}
-
-text {
-    font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-/* Efeito de hover nas linhas */
-line {
-    transition: stroke-width 0.2s ease;
-}
-
-line:hover {
-    stroke-width: 4;
-}
-
-@media (max-width: 600px) {
-    .container {
-        padding: 15px;
-    }
-    
-    input[type="number"] {
-        width: 50px;
-        padding: 6px 10px;
-    }
-    
-    .diagram-container {
-        padding: 10px;
-    }
-    
-    h1 {
-        font-size: 1.5em;
-    }
-}
+    margin: 3px 0;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .results {
+    margin-top: 20px;
+    font-size: 18px;
+  }

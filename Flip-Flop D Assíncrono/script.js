@@ -1,17 +1,30 @@
-// Referências aos elementos
-const dInput = document.getElementById('d-input');
-const qValue = document.getElementById('q-value');
-const qNotValue = document.getElementById('qnot-value');
+  // Estado inicial do flip-flop
+  let Q = 0;
+  let Qnot = 1;
 
-// Função de atualização contínua
-function updateOutput() {
-  const dVal = parseInt(dInput.value) || 0; // Garante valor numérico
-  qValue.textContent = dVal;
-  qNotValue.textContent = dVal ? '0' : '1';
-}
+  function updateDisplay() {
+    document.getElementById("outputQ").textContent = Q;
+    document.getElementById("outputQnot").textContent = Qnot;
+  }
 
-// Atualiza imediatamente ao detectar mudanças
-dInput.addEventListener('input', updateOutput);
+  // Função para simular um pulso de clock: na borda de subida, Q recebe o valor de D
+  function clockPulse() {
+    let D = document.getElementById("inputD").value;
+    if (D !== "0" && D !== "1") {
+      alert("Por favor, insira 0 ou 1 para D.");
+      return;
+    }
+    Q = D;
+    Qnot = (D === "1") ? "0" : "1";
+    updateDisplay();
+  }
 
-// Atualização inicial
-updateOutput();
+  // Função para simular o reset assíncrono: reseta Q para 0 imediatamente
+  function asyncReset() {
+    Q = 0;
+    Qnot = 1;
+    updateDisplay();
+  }
+
+  // Inicializa a tela com os valores iniciais
+  updateDisplay();
