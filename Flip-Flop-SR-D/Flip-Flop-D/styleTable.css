@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+ }
+ 
+ 
+ table {
+    border-collapse: collapse;
+    width: 50%;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    gap: 50rem;
+ }
+ 
+ 
+ th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+ }
+ 
+ 
+ th {
+    background-color: #a0a0a0;
+ }
+
+ .tabela_verdade {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 10px;
+}
+
