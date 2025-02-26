@@ -35,8 +35,13 @@ body {
 }
 
 .image-container img {
+  display: none;
   max-width: 22rem;
   height: auto;
+}
+
+.image-container img:first-child {
+  display: block; 
 }
 
 .output-column{
@@ -133,4 +138,21 @@ h1, h2 {
   background-color: #f8f8f8;
   border-radius: 0.25rem;
   text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 30%;
+  text-align: center;
+  background-color: white;
+  border: 1px solid #ccc;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+th {
+  background-color: #a0a0a0;
 }
