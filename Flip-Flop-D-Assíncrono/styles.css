@@ -1,112 +1,132 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: #f4f4f4;
-  }
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  .diagram-container {
-    position: relative;
-    margin: 50px auto;
-    width: 300px;
-    height: 250px;
-    border: 1px solid #ccc;
-    background: #fff;
-  }
-  .inner_container {
-    display: flex;
-  }
-  .flipflop {
-    position: absolute;
-    top: 50px;
-    left: 100px;
-    width: 120px;
-    height: 120px;
-    border: 3px solid #000;
-    background: #ddd;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-  }
-  /* Entrada D (lado esquerdo) */
-  .input-d {
-    position: absolute;
-    top: 110px;
-    left: 20px;
-    font-size: 14px;
-  }
-  .input-d::after {
-    content: " →";
-    margin-left: 5px;
-  }
-  /* Entrada Clock (topo) */
-  .input-clk {
-    position: absolute;
-    top: 0px;
-    left: 150px;
-    font-size: 14px;
-  }
-  .input-clk::after {
-    content: " ↓";
-    display: block;
-    margin-top: 5px;
-  }
-  /* Entrada Reset (CLR - parte inferior) */
-  .input-reset {
-    position: absolute;
-    bottom: 0px;
-    left: 150px;
-    font-size: 14px;
-  }
-  .input-reset::after {
-    content: " ↑";
-    display: block;
-    margin-top: 5px;
-  }
-  /* Saídas (lado direito) */
-  .output {
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    font-size: 14px;
-  }
-  .output::after {
-    content: " ←";
-    margin-left: 5px;
-  }
-  .controls {
-    margin-top: 20px;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .input_dados{
-    display: flex;
-    justify-items: auto;
-  }
-  .controls input[type="number"] {
-    width: 50px;
-    padding: 5px;
-    font-size: 16px;
-    text-align: center;
-  }
-  .box_btn {
-    display: flex;
-    flex-direction: column;
-  }
-  .controls button {
-    padding: 8px 12px;
-    margin: 3px 0;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  .results {
-    margin-top: 20px;
-    font-size: 18px;
-  }
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f4f4f4;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.diagram-container {
+  position: relative;
+  margin: 50px auto;
+  width: 300px;
+  height: 250px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+.inner_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flipflop {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  width: 120px;
+  height: 120px;
+  border: 3px solid #000;
+  background: #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Entrada D (lado esquerdo) */
+.input-d {
+  position: absolute;
+  top: 110px;
+  left: 20px;
+  font-size: 14px;
+}
+
+.input-d::after {
+  content: " →";
+  margin-left: 5px;
+}
+
+/* Entrada SET (topo) */
+.input-set {
+  position: absolute;
+  top: 0px;
+  left: 150px;
+  font-size: 14px;
+}
+
+.input-set::after {
+  content: " ↓";
+  display: block;
+  margin-top: 5px;
+}
+
+/* Entrada RESET (parte inferior) */
+.input-reset {
+  position: absolute;
+  bottom: 0px;
+  left: 150px;
+  font-size: 14px;
+}
+
+.input-reset::after {
+  content: " ↑";
+  display: block;
+  margin-top: 5px;
+}
+
+/* Saídas (lado direito) */
+.output {
+  position: absolute;
+  top: 80px;
+  right: 10px;
+  font-size: 14px;
+}
+
+.output::after {
+  content: " ←";
+  margin-left: 5px;
+}
+
+.controls {
+  margin-top: 20px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input_dados {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.controls input[type="number"] {
+  width: 50px;
+  padding: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.box_btn {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.controls button {
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.results {
+  margin-top: 20px;
+  font-size: 18px;
+}
