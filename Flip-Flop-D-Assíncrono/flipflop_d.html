@@ -6,37 +6,79 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Flip-Flop D Assíncrono</h1>
-
     <div class="container">
+      <h1>Flip-Flop D Assíncrono</h1>
       <a href="../index.html" class="btn-voltar">Voltar ao Menu</a>
-      
       <div class="inner_container">
-        <div class="controls">
-          <p>Input de Dados</p>
-          <div class="input_dados">
-            <label for="inputD">Entrada D:</label>
-            <input type="number" id="inputD" min="0" max="1" value="0" />
-          </div>
-          <div class="box_btn">
-            <button onclick="asyncSet()">Preset</button>
-            <button onclick="asyncReset()">Clear</button>
-          </div>
+        <div class="inputs">
+          <label>
+            PR (Preset):
+            <button onclick="togglePR()">Toggle PR</button>
+            <span id="prState">0</span>
+          </label>
+          <label>
+            D (Data):
+            <button onclick="toggleD()">Toggle D</button>
+            <span id="dState">0</span>
+          </label>
+          <label>
+            CLK (Clock):
+            <button onclick="toggleCLK()">Toggle CLK</button>
+            <span id="clkState">0</span>
+          </label>
+          <label>
+            CLR (Clear):
+            <button onclick="toggleCLR()">Toggle CLR</button>
+            <span id="clrState">0</span>
+          </label>
         </div>
 
-        <div class="diagram-container">
-          <div class="flipflop">D Flip-Flop<br />(Assíncrono)</div>
-          <div class="input-d">D</div>
-          <div class="input-set">PR</div>
-          <div class="input-reset">CLR</div>
-          <div class="output">Q / Q'</div>
+        <div class="ff-container">
+          <!-- Entradas -->
+          <div class="pr label">PR ↓</div>
+          <div class="d-input label">D →</div>
+          <div class="clr label">CLR ↑</div>
+          <div class="clock-input label">CLK →</div>
+
+          <!-- Flip-Flop -->
+          <div class="flip-flop">
+            D Flip-Flop<br />
+            (Assíncrono)
+          </div>
+
+          <!-- Saídas -->
+          <div class="q-output label">Q →</div>
+          <div class="qn-output label">Q' →</div>
+
+          <!-- Linhas de conexão -->
+          <div class="line" style="top: 50px"></div>
+          <div class="line" style="top: 110px"></div>
         </div>
 
-        <div class="results">
-          <p>Output de Dados</p>
-          <p>Saída Q: <span id="outputQ">0</span></p>
-          <p>Saída Q': <span id="outputQnot">1</span></p>
+        <div class="outputs">
+          <label>Q: <span id="qOutput">0</span></label>
+          <label>Q': <span id="qnOutput">1</span></label>
         </div>
+      </div>
+
+      <div class="tabela_verdade">
+        <h2>Tabela Verdade - Flip-Flop D Assíncrono</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>PR</th>
+              <th>CLR</th>
+              <th>D</th>
+              <th>CLK</th>
+              <th>Q</th>
+              <th>Q'</th>
+              <th>Observação</th>
+            </tr>
+          </thead>
+          <tbody id="truthTable">
+            <!-- As linhas da tabela serão geradas pelo JavaScript -->
+          </tbody>
+        </table>
       </div>
     </div>
 
