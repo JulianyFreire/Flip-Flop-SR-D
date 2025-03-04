@@ -4,29 +4,42 @@ let clockWave = [];
 let lastCLK = 0;
 
 function processar() {
-    const D = parseInt(document.getElementById('inputD').value);
+    const S = parseInt(document.getElementById('inputS').value);
+    const R = parseInt(document.getElementById('inputR').value);
     const CLK = parseInt(document.getElementById('clk').value);
 
     clockWave.push(CLK);
     if (clockWave.length > 40) clockWave.shift();
 
-    // Detectar borda de subida (0 -> 1) 
+    // Detectar borda de subida (0 -> 1)
     if (lastCLK === 0 && CLK === 1) {
-        Q = D;
-        Qn = Q === 1 ? 0 : 1;
-        mostrarImagem('flipflopD');
+        if (S === 1 && R === 0) {
+            Q = 1;
+            Qn = 0;
+            mostrarImagem('flipflopSR'); // Imagem de Set
+        } else if (S === 0 && R === 1) {
+            Q = 0;
+            Qn = 1;
+            mostrarImagem('flipflopSR'); // Imagem de Reset
+        } else if (S === 0 && R === 0) {
+            // Mantém o estado anterior
+            mostrarImagem('flipflopSR'); // Estado de memória
+        } else if (S === 1 && R === 1) {
+            // Estado proibido
+            Q = 'X';
+            Qn = 'X';
+            mostrarImagem('flipflopSR'); // Estado inválido
+        }
     }
-
-    // Detectar borda de descida (1 -> 0)
-    if (lastCLK === 1 && CLK === 0) {
-        mostrarImagem('flipflopD2');
+    // Detectar borda de descida (1 -> 0) se necessário
+    else if (lastCLK === 1 && CLK === 0) {
+        mostrarImagem('flipflopSR2'); // Volta para imagem base
     }
 
     lastCLK = CLK;
-
     desenharOnda();
-    document.getElementById('resQ').textContent = `Res: ${Q}`;
-    document.getElementById('resQn').textContent = `Res: ${Qn}`;
+    document.getElementById('resQ').textContent = `Q: ${Q}`;
+    document.getElementById('resQn').textContent = `Q̅: ${Qn}`;
 }
 
 function mostrarImagem(idImagem) {
@@ -47,17 +60,15 @@ function desenharOnda() {
     if (clockWave.length === 0) return;
 
     ctx.beginPath();
-    ctx.moveTo(0, clockWave[0] === 1 ? 30 : 120); // Correção aqui
+    ctx.moveTo(0, clockWave[0] === 1 ? 30 : 120);
 
     for (let i = 0; i < clockWave.length; i++) {
         const x = i * 20;
         const y = clockWave[i] === 1 ? 30 : 120;
         const nextX = x + 20;
 
-        // Desenha linha horizontal
         ctx.lineTo(nextX, y);
 
-        // Verifica se precisa desenhar linha vertical
         if (i < clockWave.length - 1 && clockWave[i] !== clockWave[i + 1]) {
             const nextY = clockWave[i + 1] === 1 ? 30 : 120;
             ctx.lineTo(nextX, nextY);
@@ -68,3 +79,4 @@ function desenharOnda() {
     ctx.lineWidth = 2;
     ctx.stroke();
 }
+
