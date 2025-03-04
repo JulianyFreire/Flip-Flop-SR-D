@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Flop SR Síncrono</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <a href="../index.html" class="btn-voltar">Voltar ao Menu</a>
+        <h1>Flip-Flop SR Síncrono</h1>
+        
+        <div class="columns-container">
+            <div class="input-column">
+                <div class="input-group">
+                    <label>S</label>
+                    <input type="number" id="inputS" min="0" max="1" value="0">
+                    <div class="exemplo">Ex: 0 ou 1</div>
+                </div>
+    
+                <div class="input-group">
+                    <label>CLK</label>
+                    <input type="number" id="clk" min="0" max="1" value="0">
+                    <div class="exemplo">Ex: 0 ou 1</div>
+                </div>
+
+                <div class="input-group">
+                    <label>R</label>
+                    <input type="number" id="inputR" min="0" max="1" value="0">
+                    <div class="exemplo">Ex: 0 ou 1</div>
+                </div>
+            </div>
+    
+            <div class="image-container">
+                <img id="flipflopSR" src="Assets/flipflopSR.png" alt="Flip-Flop SR Ativo">
+                <img id="flipflopSR2" src="Assets/flipflopSR2.png" alt="Flip-Flop SR Inativo">
+            </div>
+    
+            <div class="output-column">
+                <div class="output-container">
+                    <div id="resQ">Q: 0</div>
+                    <div id="resQn">Q̅: 1</div>
+                </div>
+            </div>
+        </div>
+    
+        <button onclick="processar()">PROCESSAR</button>
+    
+        <h3>Onda de Clock</h3>
+        <canvas id="waveCanvas" width="800" height="150"></canvas>
+        
+        <div class="tabela_verdade">
+            <h2>Tabela Verdade - Flip-Flop SR Síncrono</h2>
+            <table>
+                <tr>
+                    <th>S</th>
+                    <th>R</th>
+                    <th>Clock (CLK)</th>
+                    <th>Saída (Q)</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>↑</td>
+                    <td>Q₀ (não muda)</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>↑</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>↑</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>↑</td>
+                    <td>Ambíguo</td>
+                </tr>
+            </table>
+        </div>    
+    
+    <script src="script.js"></script>
+</body>
+</html>
