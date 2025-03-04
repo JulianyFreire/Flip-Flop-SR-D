@@ -5,128 +5,157 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 62.5rem;
   margin: 0 auto;
-  padding: 20px;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
 }
 
-.diagram-container {
-  position: relative;
-  margin: 50px auto;
-  width: 300px;
-  height: 250px;
-  border: 1px solid #ccc;
-  background: #fff;
+.btn-voltar {
+  padding: 0.5rem 1rem;
+  background-color: #444;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background 0.3s, transform 0.1s;
 }
 
 .inner_container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.flipflop {
-  position: absolute;
-  top: 50px;
-  left: 100px;
-  width: 120px;
-  height: 120px;
-  border: 3px solid #000;
-  background: #ddd;
+.inputs,
+.outputs {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: baseline;
+  margin: 10px 0;
+}
+
+.inputs label,
+.outputs label {
+  display: block;
+  margin: 5px 0;
+}
+
+.outputs {
   font-weight: bold;
 }
 
-/* Entrada D (lado esquerdo) */
-.input-d {
-  position: absolute;
-  top: 110px;
-  left: 20px;
-  font-size: 14px;
-}
-
-.input-d::after {
-  content: " →";
-  margin-left: 5px;
-}
-
-/* Entrada SET (topo) */
-.input-set {
-  position: absolute;
-  top: 0px;
-  left: 150px;
-  font-size: 14px;
-}
-
-.input-set::after {
-  content: " ↓";
-  display: block;
-  margin-top: 5px;
-}
-
-/* Entrada RESET (parte inferior) */
-.input-reset {
-  position: absolute;
-  bottom: 0px;
-  left: 150px;
-  font-size: 14px;
-}
-
-.input-reset::after {
-  content: " ↑";
-  display: block;
-  margin-top: 5px;
-}
-
-/* Saídas (lado direito) */
-.output {
-  position: absolute;
-  top: 80px;
-  right: 10px;
-  font-size: 14px;
-}
-
-.output::after {
-  content: " ←";
-  margin-left: 5px;
-}
-
-.controls {
-  margin-top: 20px;
-  font-size: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.input_dados {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.controls input[type="number"] {
-  width: 50px;
-  padding: 5px;
-  font-size: 16px;
-  text-align: center;
-}
-
-.box_btn {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.controls button {
-  padding: 8px 12px;
-  font-size: 16px;
+button {
+  margin: 10px 5px;
+  padding: 5px 10px;
   cursor: pointer;
 }
 
-.results {
+/* Tabela Verdade */
+.tabela_verdade {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+table { 
+  border-collapse: collapse;
+  width: 100%;
   margin-top: 20px;
-  font-size: 18px;
+  text-align: center;
+  background-color: white;
+  border: 1px solid #ccc;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+th {
+  background-color: #a0a0a0;
+}
+
+/* Diagrama */
+.ff-container {
+  position: relative;
+  width: 300px;
+  height: 200px;
+}
+
+.flip-flop {
+  position: absolute;
+  left: 100px;
+  top: 50px;
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.pr {
+  position: absolute;
+  left: 130px;
+  top: 10px;
+}
+
+.clr {
+  position: absolute;
+  left: 130px;
+  top: 170px;
+}
+
+.d-input {
+  position: absolute;
+  left: 30px;
+  top: 100px;
+}
+
+.clock-input {
+  position: absolute;
+  left: 150px;
+  top: 30px;
+}
+
+.q-output {
+  position: absolute;
+  left: 240px;
+  top: 80px;
+}
+
+.qn-output {
+  position: absolute;
+  left: 240px;
+  top: 120px;
+}
+
+.line {
+  position: absolute;
+  border-left: 2px solid black;
+  height: 40px;
+  left: 150px;
+}
+
+.arrow-down {
+  position: absolute;
+  left: 145px;
+  top: 30px;
+}
+
+.arrow-up {
+  position: absolute;
+  left: 145px;
+  top: 150px;
+}
+
+.label {
+  font-family: Arial;
+  font-size: 12px;
 }
