@@ -1,11 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Flip Flop SR Assíncrono</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Flip Flop SR</h1>
+  <div class="main-container">
+    <a href="../index.html" class="btn-voltar">Voltar ao Menu</a>
+    <h2>Flip-Flop SR Assíncrono</h2>
+    
+    <div class="columns-container">
+        <div class="input-column">
+        
+        <div class="tabela_verdade">
+            <h2>Tabela Verdade</h2>
+            <div>
+                <table>
+                    <tr>
+                        <th>S</th>
+                        <th>R</th>
+                        <th>Saída (Q)</th>
+                        <th>Saída Complementar (Q̅)</th>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>Q₀ (não muda)</td>
+                        <td>Q̅₀ (não muda)</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>Ambíguo</td>
+                        <td>Ambíguo</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="portas_logicas">
+            <h2>Portas Lógicas</h2>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>

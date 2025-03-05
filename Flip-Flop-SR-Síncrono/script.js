@@ -8,11 +8,13 @@ function processar() {
     const R = parseInt(document.getElementById('inputR').value);
     const CLK = parseInt(document.getElementById('clk').value);
 
+    // Adiciona o valor do clock à onda de clock
     clockWave.push(CLK);
     if (clockWave.length > 40) clockWave.shift();
 
-    // Detectar borda de subida (0 -> 1)
+    // Detecta borda de subida (0 -> 1)
     if (lastCLK === 0 && CLK === 1) {
+        // Comportamento de Set e Reset
         if (S === 1 && R === 0) {
             Q = 1;
             Qn = 0;
@@ -22,22 +24,31 @@ function processar() {
             Qn = 1;
             mostrarImagem('flipflopSR'); // Imagem de Reset
         } else if (S === 0 && R === 0) {
-            // Mantém o estado anterior
+            // Mantém o estado anterior (Q₀)
             mostrarImagem('flipflopSR'); // Estado de memória
+            document.getElementById('resQ').textContent = `Q: Q₀ (não muda)`;
+            document.getElementById('resQn').textContent = `Q̅: Q₀ (não muda)`;
+            return;
         } else if (S === 1 && R === 1) {
             // Estado proibido
-            Q = 'X';
-            Qn = 'X';
+            Q = 'Ambíguo';
+            Qn = 'Ambíguo';
             mostrarImagem('flipflopSR'); // Estado inválido
         }
     }
-    // Detectar borda de descida (1 -> 0) se necessário
+    
+    // Detecta borda de descida (1 -> 0) e atualiza a imagem para um estado inativo
     else if (lastCLK === 1 && CLK === 0) {
-        mostrarImagem('flipflopSR2'); // Volta para imagem base
+        mostrarImagem('flipflopSR2'); // Imagem inativa para borda de descida
     }
 
+    // Atualiza o estado anterior do clock
     lastCLK = CLK;
+
+    // Atualiza a onda de clock
     desenharOnda();
+    
+    // Atualiza o valor de Q e Qn
     document.getElementById('resQ').textContent = `Q: ${Q}`;
     document.getElementById('resQn').textContent = `Q̅: ${Qn}`;
 }
@@ -79,4 +90,3 @@ function desenharOnda() {
     ctx.lineWidth = 2;
     ctx.stroke();
 }
-

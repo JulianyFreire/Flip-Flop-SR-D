@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1.25rem;
+    background: #f4f4f4;
+}
+
+.main-container {
+    max-width: 62.5rem;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.625rem #0000001a;
+}
+
+.btn-voltar {
+    padding: 0.5rem 1rem;
+    background-color: #444444;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: background 0.3s, transform 0.1s;
+}
+
+.btn-voltar:hover {
+    background: #555555;
+    transform: translateY(-0.125rem);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin: 1rem auto;
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    background: #808080;
+    border-radius: 0.3125rem;
+    transition: background 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background: #555555;
+    transform: translateY(-0.125rem);
+}
+
+button:active {
+    transform: translateY(0.125rem);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+.flip-flop {
+    width: 100px;
+    height: 150px;
+    border: 2px solid #333;
+    margin: 20px;
+    position: relative;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+.input, .output {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #666;
+    border-radius: 50%;
+}
+
+.d-input { left: -10px; top: 40px; }
+.clock-input { left: -10px; top: 100px; }
+.q-output { right: -10px; top: 40px; }
+
+.bit {
+    font-size: 24px;
+    position: absolute;
+    top: 65px;
+    left: 45px;
+}
+
+.clock-line {
+    height: 2px;
+    background-color: #333;
+    margin: 0 20px;
+    position: relative;
+    top: 100px;
+}
+
+.controls {
+    text-align: center;
+    margin: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.pulse {
+    animation: pulse 0.5s;
+}
+
+@keyframes pulse {
+    0% { background-color: yellow; }
+    100% { background-color: transparent; }
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,36 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="main-container">
+    <a href="../index.html" class="btn-voltar">Voltar ao Menu</a>
     <h1>Registrador de 4 bits</h1>
-    <script src="script.js"></script>
+    <h2>Flip flop D Sincrono</h2>
+    <div class="controls">
+      <button onclick="toggleClock()">Clock ↑</button>
+      <button onclick="reset()">Reset</button>
+  </div>
+  
+  <div class="container">
+      <div class="flip-flop">
+          <div class="input d-input" id="d3"></div>
+          <div class="input clock-input"></div>
+          <div class="output q-output" id="q3"></div>
+          <div class="bit" id="bit3">0</div>
+      </div>
+      <!-- Repetir para os outros 3 flip-flops -->
+      <div class="flip-flop"><div class="input d-input" id="d2"></div><div class="clock-input input"></div><div class="output q-output" id="q2"></div><div class="bit" id="bit2">0</div></div>
+      <div class="flip-flop"><div class="input d-input" id="d1"></div><div class="clock-input input"></div><div class="output q-output" id="q1"></div><div class="bit" id="bit1">0</div></div>
+      <div class="flip-flop"><div class="input d-input" id="d0"></div><div class="clock-input input"></div><div class="output q-output" id="q0"></div><div class="bit" id="bit0">0</div></div>
+  </div>
+
+  <div class="controls">
+      D inputs: 
+      <button onclick="toggleInput(3)">D3</button>
+      <button onclick="toggleInput(2)">D2</button>
+      <button onclick="toggleInput(1)">D1</button>
+      <button onclick="toggleInput(0)">D0</button>
+  </div>          
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
