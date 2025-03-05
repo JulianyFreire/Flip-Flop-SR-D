@@ -2,6 +2,8 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   background: #f4f4f4;
+  margin: 0;
+  padding: 1.25rem;
 }
 
 .container {
@@ -20,6 +22,11 @@ body {
   text-decoration: none;
   border-radius: 0.25rem;
   transition: background 0.3s, transform 0.1s;
+}
+
+.btn-voltar:hover {
+  background: #555;
+  transform: translateY(-0.125rem);
 }
 
 .inner_container {

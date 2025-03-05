@@ -47,44 +47,88 @@
     
         <button onclick="processar()">PROCESSAR</button>
     
-        <h3>Onda de Clock</h3>
+        <h2>Onda de Clock</h2>
         <canvas id="waveCanvas" width="800" height="150"></canvas>
         
         <div class="tabela_verdade">
-            <h2>Tabela Verdade - Flip-Flop SR Síncrono</h2>
+            <h2>Tabela Verdade</h2>
             <table>
                 <tr>
-                    <th>S</th>
-                    <th>R</th>
-                    <th>Clock (CLK)</th>
-                    <th>Saída (Q)</th>
+                  <th>CLK</th>
+                  <th>S</th>
+                  <th>R</th>
+                  <th>Q</th>
+                  <th>Q̅</th>
                 </tr>
                 <tr>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>↑</td>
-                    <td>Q₀ (não muda)</td>
+                  <td>0</td>
+                  <td>X</td>
+                  <td>X</td>
+                  <td>0</td>
+                  <td>0</td>
                 </tr>
                 <tr>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>↑</td>
-                    <td>0</td>
+                  <td>0</td>
+                  <td>X</td>
+                  <td>X</td>
+                  <td>1</td>
+                  <td>1</td>
                 </tr>
                 <tr>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>↑</td>
-                    <td>1</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
                 </tr>
                 <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>↑</td>
-                    <td>Ambíguo</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>1</td>
                 </tr>
-            </table>
-        </div>    
+                <tr>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>X</td>
+                  <td>X</td>
+                </tr>
+              </table>
+        </div> 
+        
+        <div class="portas_logicas">
+            <h2>Portas Lógicas</h2>
+        </div>
     
     <script src="script.js"></script>
 </body>

@@ -2,16 +2,16 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 1.25rem;
-  background-color: #f0f0f0;
+  background: #f4f4f4;
 }
 
 .main-container {
   max-width: 62.5rem;
   margin: 0 auto;
-  background-color: white;
+  background-color: #ffffff;
   padding: 2rem;
   border-radius: 0.5rem;
-  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.625rem #0000001a;
 }
 
 .columns-container {
@@ -75,15 +75,15 @@ body {
 
 .btn-voltar {
   padding: 0.5rem 1rem;
-  background-color: #444;
-  color: white;
+  background-color: #444444;
+  color: #ffffff;
   text-decoration: none;
   border-radius: 0.25rem;
   transition: background 0.3s, transform 0.1s;
 }
 
 .btn-voltar:hover {
-  background: #555;
+  background: #555555;
   transform: translateY(-0.125rem);
 }
 
@@ -92,7 +92,7 @@ input {
   padding: 0.7rem; 
   margin: 0.3rem auto; 
   text-align: center;
-  border: 0.0625rem solid #ccc;
+  border: 0.0625rem solid #cccccc;
   border-radius: 0.3rem; 
 }
 
@@ -105,14 +105,14 @@ button {
   margin: 1rem auto;
   display: block;
   text-decoration: none;
-  color: white;
+  color: #ffffff;
   background: #808080;
   border-radius: 0.3125rem;
   transition: background 0.3s, transform 0.1s;
 }
 
 button:hover {
-  background: #555;
+  background: #555555;
   transform: translateY(-0.125rem);
 }
 
@@ -122,7 +122,7 @@ button:active {
 
 .exemplo {
   font-size: 0.8rem;
-  color: #666;
+  color: #666666;
   margin-top: 0.3rem;
 }
 
@@ -142,15 +142,16 @@ h1, h2 {
 
 table {
   border-collapse: collapse;
-  width: 30%;
+  width: 50%;
   text-align: center;
-  background-color: white;
-  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  margin: 0 auto; /* Centraliza a tabela */
 }
 
 th, td {
-  border: 1px solid #ccc;
-  padding: 10px;
+  border: 1px solid #cccccc;
+  padding: 0.625rem;
 }
 
 th {
