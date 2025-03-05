@@ -56,3 +56,66 @@ button:hover {
 button:active {
     transform: translateY(0.125rem);
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+.flip-flop {
+    width: 100px;
+    height: 150px;
+    border: 2px solid #333;
+    margin: 20px;
+    position: relative;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+.input, .output {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #666;
+    border-radius: 50%;
+}
+
+.d-input { left: -10px; top: 40px; }
+.clock-input { left: -10px; top: 100px; }
+.q-output { right: -10px; top: 40px; }
+
+.bit {
+    font-size: 24px;
+    position: absolute;
+    top: 65px;
+    left: 45px;
+}
+
+.clock-line {
+    height: 2px;
+    background-color: #333;
+    margin: 0 20px;
+    position: relative;
+    top: 100px;
+}
+
+.controls {
+    text-align: center;
+    margin: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.pulse {
+    animation: pulse 0.5s;
+}
+
+@keyframes pulse {
+    0% { background-color: yellow; }
+    100% { background-color: transparent; }
+}
