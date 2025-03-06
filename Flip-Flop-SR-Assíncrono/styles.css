@@ -1,86 +1,90 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 1.25rem;
+    text-align: center;
     background: #f4f4f4;
 }
-  
-.main-container {
+
+.container {
     max-width: 62.5rem;
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color: white;
     padding: 2rem;
     border-radius: 0.5rem;
-    box-shadow: 0 0 0.625rem #0000001a;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
 }
-  
-.columns-container {
-    display: flex;
-    gap: 1.25rem;
-    width: 100%;
-    align-items: center;
-    justify-content: center; /* Centraliza as colunas */
+
+img {
+    width: 300px;
+    /* margin: 10px 500px; */
 }
-  
-.input-column {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    align-items: center; /* Centraliza os itens */
-}
-  
+
 .btn-voltar {
     padding: 0.5rem 1rem;
-    background-color: #444444;
-    color: #ffffff;
+    background-color: #444;
+    color: white;
     text-decoration: none;
     border-radius: 0.25rem;
     transition: background 0.3s, transform 0.1s;
-    display: inline-block;
-    margin-bottom: 1.5rem;
 }
-  
-.btn-voltar:hover {
-    background: #555555;
-    transform: translateY(-0.125rem);
+
+.inner_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
 }
-  
-button {
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    font-size: 1.1rem;
+
+.inputs,
+.outputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    margin: 10px 0;
+}
+
+.inputs label,
+.outputs label {
     display: block;
-    text-decoration: none;
-    color: #ffffff;
-    background: #808080;
-    transition: background 0.3s, transform 0.1s;
+    margin: 5px 0;
 }
-  
-button:hover {
-    background: #555555;
-    transform: translateY(-0.125rem);
+
+.outputs {
+    font-weight: bold;
 }
-  
-button:active {
-    transform: translateY(0.125rem);
+
+button {
+    margin: 10px 5px;
+    padding: 5px 10px;
+    cursor: pointer;
 }
-  
-h1, h2 {
+
+input#S, input#R {
+    padding: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Tabela Verdade */
+.tabela_verdade {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
     text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    padding: 20px;
+    border-radius: 10px;
 }
-  
+
+  /* tabela verdade */
 table {
     border-collapse: collapse;
     width: 30rem;
     text-align: center;
     background-color: #ffffff;
     border: 1px solid #cccccc;
-    margin: 0 auto; /* Centraliza a tabela */
+    margin: 0 auto;
 }
   
 th, td {
