@@ -88,6 +88,7 @@ h1, h2 {
     justify-content: center;
     gap: 20px;
     margin: 20px 0;
+    color: #2c3e50;
 }
 
 .ff-btn {
@@ -97,6 +98,13 @@ h1, h2 {
     box-sizing: border-box;
 }
 
+p {
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333333;
+}
+
 button {
     padding: 10px 20px;
     border: none;
@@ -104,13 +112,35 @@ button {
     cursor: pointer;
     font-size: 1rem;
     color: #ffffff;
-    background: #808080;
     transition: background 0.3s, transform 0.1s;
 }
 
-button:hover {
+/* Botão Clock - Azul */
+.controls button:nth-child(1) {
+    background: #007bff;
+}
+
+.controls button:nth-child(1):hover {
+    background: #0069d9;
+}
+
+/* Botão Reset - Vermelho */
+.controls button:nth-child(2) {
+    background: #dc3545;
+}
+
+.controls button:nth-child(2):hover {
+    background: #c82333;
+}
+
+.btn-voltar,
+.ff-btn {
+    background: #808080;
+}
+
+.btn-voltar:hover,
+.ff-btn:hover {
     background: #555555;
-    transform: translateY(-0.125rem);
 }
 
 .register-output {
@@ -132,16 +162,30 @@ button:hover {
     animation: pulse 0.5s;
 }
 
-.image-container img {
+.image-container {
     display: flex;
-    max-width: 22rem;
-    height: auto;
     justify-content: center;
+    margin: 20px 0;
 }
 
-.image-container img:first-child {
-    display: block; 
-  }
+.image-container img {
+    max-width: 22rem;
+    height: auto;
+}
+
+.custom-list {
+    margin: 20px 0;
+    padding-left: 30px;
+}
+
+.custom-list li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.custom-list strong {
+    color: #2c3e50;
+}
   
 @keyframes pulse {
     0% { background-color: yellow; }
