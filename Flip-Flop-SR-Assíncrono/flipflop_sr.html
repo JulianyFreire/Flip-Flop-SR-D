@@ -1,83 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flip Flop SR Assíncrono</title>
     <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Flip-Flop SR Assíncrono</h1>
-      <a href="../index.html" class="btn-voltar">Voltar ao Menu</a>
-      <div class="inner_container">
-        <div class="inputs">
-          <label>S: </label>
-          <input type="number" id="S" min="0" max="1" value="0" />
+</head>
+<body>
+    <div class="main-container">
+          <a href="../index.html" class="btn-voltar">Voltar ao Menu</a>
+          <h1>Flip-Flop SR Assíncrono</h1>
 
-          <label>R: </label>
-          <input type="number" id="R" min="0" max="1" value="0" />
+        <div class="columns-container">
+            <div class="input-column">
+                <div class="input-group">
+                    <label for="S">S: </label>
+                    <input type="number" id="S" min="0" max="1" value="0" />
+
+                    <label for="R">R: </label>
+                    <input type="number" id="R" min="0" max="1" value="0" />
+                </div>
+            </div>
+
+            <div class="image-container">
+                <img src="assets/ff_sr_assincrono.png" alt="Imagem do Flip-Flop SR Assíncrono" />
+            </div>
+
+            <div class="output-column">
+                <div class="output-container">
+                  <div id="Q">Q: 0</div>
+                  <div id="Qbar">Q̅: 1</div>
+                </div>
+            </div>
         </div>
 
-        <div class="ff-container">
-          <img
-            src="assets/ff_sr_assincrono.png"
-            alt="imagem do flipflop_SR_assíncrono"
-          />
-        </div>
-
-        <div class="output">
-          <p>Q: <span id="Q">0</span></p>
-          <p>Q̅: <span id="Qbar">1</span></p>
-        </div>
-      </div>
-
-      <button onclick="processar()">PROCESSAR</button>
+        <button onclick="processar()">PROCESSAR</button>
 
         <div class="tabela_verdade">
-          <h2>Tabela Verdade - Flip-Flop SR Assíncrono</h2>
-          <table>
-            <tr>
-              <th>S</th>
-              <th>R</th>
-              <th>Saída (Q)</th>
-              <th>Saída Complementar (Q̅)</th>
-            </tr>
-            <tr>
-              <td>0</td>
-              <td>0</td>
-              <td>Q₀ (não muda)</td>
-              <td>Q̅₀ (não muda)</td>
-            </tr>
-            <tr>
-              <td>0</td>
-              <td>1</td>
-              <td>0</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>0</td>
-              <td>1</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>1</td>
-              <td>Ambíguo</td>
-              <td>Ambíguo</td>
-            </tr>
-          </table>
+            <h2>Tabela Verdade</h2>
+            <table>
+                <tr>
+                    <th>S</th>
+                    <th>R</th>
+                    <th>Saída (Q)</th>
+                    <th>Saída Complementar (Q̅)</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>Q₀ (não muda)</td>
+                    <td>Q̅₀ (não muda)</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>Ambíguo</td>
+                    <td>Ambíguo</td>
+                </tr>
+            </table>
         </div>
 
         <div class="portas_logicas">
-          <h4>PORTAS LÓGICAS</h4>
-          <img
-            src="./assets/porta_logica.png"
-            alt="Diagrama do Flip-Flop SR Assíncrono"
-          />
+            <h2>Porta Lógica - NAND</h2>
+            <img src="./assets/porta_logica.png" alt="Diagrama do Flip-Flop SR Assíncrono" />
         </div>
     </div>
+
     <script src="script.js"></script>
-  </body>
+    
+</body>
 </html>

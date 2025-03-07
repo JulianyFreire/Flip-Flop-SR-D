@@ -25,7 +25,7 @@
                     <div class="exemplo">Ex: 0 ou 1</div>
                 </div>
 
-                <div class="input-group">
+                <div class="input-group-r">
                     <label>R</label>
                     <input type="number" id="inputR" min="0" max="1" value="0">
                     <div class="exemplo">Ex: 0 ou 1</div>
@@ -38,10 +38,13 @@
             </div>
     
             <div class="output-column">
-                <div class="output-container">
+                <div class="output-container-Q">
                     <div id="resQ">Q: 0</div>
-                    <div id="resQn">Q̅: 1</div>
                 </div>
+                <div class="output-container-Qn">
+                  <div id="resQn">Q̅: 1</div>
+                </div>
+
             </div>
         </div>
     
@@ -53,81 +56,54 @@
         <div class="tabela_verdade">
             <h2>Tabela Verdade</h2>
             <table>
-                <tr>
+              <tr>
                   <th>CLK</th>
                   <th>S</th>
                   <th>R</th>
                   <th>Q</th>
                   <th>Q̅</th>
-                </tr>
-                <tr>
+              </tr>
+              <tr>
                   <td>0</td>
                   <td>X</td>
                   <td>X</td>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>0</td>
-                  <td>X</td>
-                  <td>X</td>
-                  <td>1</td>
-                  <td>1</td>
-                </tr>
-                <tr>
+                  <td>Q</td>
+                  <td>Q̅</td>
+              </tr>
+              <tr>
                   <td>1</td>
                   <td>0</td>
                   <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>1</td>
-                  <td>1</td>
-                </tr>
-                <tr>
+                  <td>Q</td>
+                  <td>Q̅</td>
+              </tr>
+              <tr>
                   <td>1</td>
                   <td>0</td>
                   <td>1</td>
                   <td>0</td>
-                  <td>0</td>
-                </tr>
-                <tr>
                   <td>1</td>
-                  <td>0</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>1</td>
-                </tr>
-                <tr>
+              </tr>
+              <tr>
                   <td>1</td>
                   <td>1</td>
                   <td>0</td>
                   <td>1</td>
-                  <td>1</td>
-                </tr>
-                <tr>
+                  <td>0</td>
+              </tr>
+              <tr>
                   <td>1</td>
                   <td>1</td>
                   <td>1</td>
                   <td>X</td>
                   <td>X</td>
-                </tr>
-              </table>
+              </tr>
+          </table>
         </div> 
         
         <div class="portas_logicas">
-            <h2>Portas Lógicas</h2>
+            <h2>Porta Lógica - NAND</h2>
+            <img src="./Assets/portalogica.png" alt="Diagrama do Flip-Flop SR Síncrono"/>
         </div>
     
     <script src="script.js"></script>

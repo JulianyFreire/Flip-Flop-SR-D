@@ -5,8 +5,8 @@ function processar() {
   let Qbar = document.getElementById("Qbar");
 
   if (S === 1 && R === 1) {
-    Q.textContent = "?";
-    Qbar.textContent = "?";
+    Q.textContent = "Ambíguo";
+    Qbar.textContent = "Ambíguo";
   } else if (S === 1 && R === 0) {
     Q.textContent = "1";
     Qbar.textContent = "0";
