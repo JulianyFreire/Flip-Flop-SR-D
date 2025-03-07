@@ -18,14 +18,14 @@ function processar() {
         if (S === 1 && R === 0) {
             Q = 1;
             Qn = 0;
-            mostrarImagem('flipflopSR'); // Imagem de Set
+            mostrarImagem('flipflopSR'); 
         } else if (S === 0 && R === 1) {
             Q = 0;
             Qn = 1;
-            mostrarImagem('flipflopSR'); // Imagem de Reset
+            mostrarImagem('flipflopSR'); 
         } else if (S === 0 && R === 0) {
             // Mantém o estado anterior (Q₀)
-            mostrarImagem('flipflopSR'); // Estado de memória
+            mostrarImagem('flipflopSR'); 
             document.getElementById('resQ').textContent = `Q: Q₀ (não muda)`;
             document.getElementById('resQn').textContent = `Q̅: Q₀ (não muda)`;
             return;

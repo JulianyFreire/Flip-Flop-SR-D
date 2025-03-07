@@ -10,14 +10,14 @@ function processar() {
     clockWave.push(CLK);
     if (clockWave.length > 40) clockWave.shift();
 
-    // Detectar borda de subida (0 -> 1) 
+    // Borda de subida (0 -> 1) 
     if (lastCLK === 0 && CLK === 1) {
         Q = D;
         Qn = Q === 1 ? 0 : 1;
         mostrarImagem('flipflopD');
     }
 
-    // Detectar borda de descida (1 -> 0)
+    // Borda de descida (1 -> 0)
     if (lastCLK === 1 && CLK === 0) {
         mostrarImagem('flipflopD2');
     }
@@ -47,17 +47,15 @@ function desenharOnda() {
     if (clockWave.length === 0) return;
 
     ctx.beginPath();
-    ctx.moveTo(0, clockWave[0] === 1 ? 30 : 120); // Correção aqui
+    ctx.moveTo(0, clockWave[0] === 1 ? 30 : 120); 
 
     for (let i = 0; i < clockWave.length; i++) {
         const x = i * 20;
         const y = clockWave[i] === 1 ? 30 : 120;
         const nextX = x + 20;
 
-        // Desenha linha horizontal
         ctx.lineTo(nextX, y);
 
-        // Verifica se precisa desenhar linha vertical
         if (i < clockWave.length - 1 && clockWave[i] !== clockWave[i + 1]) {
             const nextY = clockWave[i + 1] === 1 ? 30 : 120;
             ctx.lineTo(nextX, nextY);
