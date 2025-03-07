@@ -87,6 +87,13 @@ body {
   transform: translateY(-0.125rem);
 }
 
+p {
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #333333;
+}
+
 input {
   width: 90%;
   padding: 0.7rem; 

@@ -10,9 +10,28 @@
   <div class="main-container">
     <a href="../index.html" class="btn-voltar">Voltar ao Menu</a>
     <h1>Registrador de 4 bits</h1>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia excepturi ex nobis 
-        amet vero laborum sed. Autem dicta vel quis
-        asperiores dolores tempora quo, inventore corrupti, earum ipsum voluptatum cumque.</p>
+    <p>
+        Um registrador de 4 bits é um circuito sequencial utilizado para armazenar temporariamente 4 bits de informação (valores binários: 0 ou 1).
+        Sua estrutura básica consiste em quatro flip-flops do tipo D conectados em paralelo, operando de forma sincronizada por um sinal de clock.
+    </p>
+
+    <ul class="custom-list">
+        <li>
+            <strong>Cada flip-flop D possui:</strong>
+            <ul>
+                <li>Uma entrada <strong>D</strong> (Data)</li>
+                <li>Uma saída <strong>Q</strong></li>
+            </ul>
+        </li>
+        <li>
+            <strong>Coletivamente o registrador possui:</strong>
+            <ul>
+                <li>4 entradas (<strong>D₀ a D₃</strong>) para receber bits</li>
+                <li>4 saídas (<strong>Q₀ a Q₃</strong>) para disponibilizar dados armazenados</li>
+            </ul>
+        </li>
+    </ul>
+
     <h2>Flip Flop D Síncrono</h2>
     <div class="image-container">
         <img id="flipflopD" src="./Assets/flipflopD.png" alt="Diagrama Flip-Flop D (Borda de Subida)">
@@ -27,7 +46,7 @@
                 <div class="output q-output" id="q3"></div>
                 <div class="bit" id="bit3">0</div>
             </div>
-            <button onclick="toggleInput(3)" class="ff-btn">FF3</button>
+            <button onclick="toggleInput(3)" class="ff-btn">D3</button>
         </div>
 
         <!-- Coluna FF2 -->
@@ -38,7 +57,7 @@
                 <div class="output q-output" id="q2"></div>
                 <div class="bit" id="bit2">0</div>
             </div>
-            <button onclick="toggleInput(2)" class="ff-btn">FF2</button>
+            <button onclick="toggleInput(2)" class="ff-btn">D2</button>
         </div>
 
         <!-- Coluna FF1 -->
@@ -49,7 +68,7 @@
                 <div class="output q-output" id="q1"></div>
                 <div class="bit" id="bit1">0</div>
             </div>
-            <button onclick="toggleInput(1)" class="ff-btn">FF1</button>
+            <button onclick="toggleInput(1)" class="ff-btn">D1</button>
         </div>
 
         <!-- Coluna FF0 -->
@@ -60,18 +79,18 @@
                 <div class="output q-output" id="q0"></div>
                 <div class="bit" id="bit0">0</div>
             </div>
-            <button onclick="toggleInput(0)" class="ff-btn">FF0</button>
+            <button onclick="toggleInput(0)" class="ff-btn">D0</button>
         </div>
     </div>
     <div class="register-output">
         Resultado: <span id="registerValue">0000</span>
     </div>
+    
     <div class="controls">
         <button onclick="toggleClock()">Clock</button>
         <button onclick="reset()">Reset</button>
     </div>
 
-    
   </div>
   <script src="script.js"></script>
 </body>
