@@ -89,34 +89,20 @@ th {
   background-color: #a0a0a0;
 }
 
-/* Diagrama */
-.ff-container {
-  position: relative;
-  width: 300px;
-  height: 200px;
-}
 
-.flip-flop {
-  position: absolute;
-  left: 100px;
-  top: 50px;
-  width: 100px;
-  height: 100px;
-  border: 2px solid black;
+.image-container {
+  flex-grow: 1;
   text-align: center;
-  padding-top: 10px;
 }
 
-.pr {
-  position: absolute;
-  left: 130px;
-  top: 10px;
+.image-container img {
+  display: none;
+  max-width: 22rem;
+  height: auto;
 }
 
-.clr {
-  position: absolute;
-  left: 130px;
-  top: 170px;
+.image-container img:first-child {
+  display: block; 
 }
 
 .d-input {
@@ -165,4 +151,13 @@ th {
 .label {
   font-family: Arial;
   font-size: 12px;
+}
+
+.portas_logicas {
+  display: flex;
+  flex-direction: column;
+}
+
+.portas_logicas img {
+  width: 90%;
 }

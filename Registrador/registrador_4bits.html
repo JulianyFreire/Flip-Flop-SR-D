@@ -10,15 +10,12 @@
   <div class="main-container">
     <a href="../index.html" class="btn-voltar">Voltar ao Menu</a>
     <h1>Registrador de 4 bits</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia excepturi ex nobis 
+        amet vero laborum sed. Autem dicta vel quis
+        asperiores dolores tempora quo, inventore corrupti, earum ipsum voluptatum cumque.</p>
     <h2>Flip Flop D Síncrono</h2>
-    
-    <div class="controls">
-        <button onclick="toggleClock()">Clock</button>
-        <button onclick="reset()">Reset</button>
-    </div>
-
-    <div class="register-output">
-        Resultado: <span id="registerValue">0000</span>
+    <div class="image-container">
+        <img id="flipflopD" src="./Assets/flipflopD.png" alt="Diagrama Flip-Flop D (Borda de Subida)">
     </div>
 
     <div class="ff-grid">
@@ -66,7 +63,15 @@
             <button onclick="toggleInput(0)" class="ff-btn">FF0</button>
         </div>
     </div>
+    <div class="register-output">
+        Resultado: <span id="registerValue">0000</span>
+    </div>
+    <div class="controls">
+        <button onclick="toggleClock()">Clock</button>
+        <button onclick="reset()">Reset</button>
+    </div>
 
+    
   </div>
   <script src="script.js"></script>
 </body>
