@@ -132,6 +132,17 @@ button:hover {
     animation: pulse 0.5s;
 }
 
+.image-container img {
+    display: flex;
+    max-width: 22rem;
+    height: auto;
+    justify-content: center;
+}
+
+.image-container img:first-child {
+    display: block; 
+  }
+  
 @keyframes pulse {
     0% { background-color: yellow; }
     100% { background-color: transparent; }
